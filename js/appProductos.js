@@ -1,18 +1,19 @@
 const gridContainer = document.getElementById("js-gridContainer");
 const searchInput = document.getElementById("js-searchBarInput");
-//const searchButton = document.getElementById("js-searchButton");
 
+//Lista de Productos
 
 const htmlTemplate = (products) => {
     return `<div class="card">
+
     <p class="card-name">${products.name}</p>
     <p class="card-price">$${products.price}</p>
-    <input type="number" placeholder="ingrese la cantidad">
-    <button type="submit">Agregar al carrito</button>
+    <button type="submit" id="js-btnCart">Comprar</button>
     </div>`;
 };
 
 
+//Funcion Filtrar Productos
 
 const renderHTML = (products, container) => {
     container.innerHTML = "";
@@ -46,6 +47,7 @@ const filterProducts = () => {
     renderHTML(filterProducts, gridContainer);
 };
 
-//searchButton.addEventListener("click", filterProducts);
 
-searchInput.addEventListener("keyup", filterProducts)
+searchInput.addEventListener("keyup", filterProducts);
+
+//Funcion Añadir Productos
